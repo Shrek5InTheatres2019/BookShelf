@@ -80,7 +80,7 @@ public class SQLManager
         }
         else
         {
-            sqliteDB = new SQLite(logger, "BookShelf", plugin.getDataFolder()
+            sqliteDB = new SQLite(logger, prefix, plugin.getDataFolder()
                     .getAbsolutePath(), "Shelves");
             try
             {
