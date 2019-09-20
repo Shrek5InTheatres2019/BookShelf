@@ -229,7 +229,7 @@ public class ExternalPluginManager
                 .getPluginManager().getPlugin("WorldEdit");
         if(worldEditPlugin != null)
         {
-            if(worldEditPlugin.getDescription().getVersion().startsWith("6."))
+            if(worldEditPlugin.getDescription().getVersion().startsWith("6.") || worldEditPlugin.getDescription().getVersion().startsWith("7."))
             {
                 logger.info("[BookShelf] WorldEdit found and hooked.");
                 this.usingWorldEdit = true;
