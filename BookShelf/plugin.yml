@@ -1,6 +1,6 @@
 name: BookShelf
 main: me.MitchT.BookShelf.BookShelfPlugin
-version: 4.0
+version: 4.0.1
 description: Allows players to store books in bookshelves.
 author: MitchTalmadge
 dev-url: http://dev.bukkit.org/server-mods/BookShelf
