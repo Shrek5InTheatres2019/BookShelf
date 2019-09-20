@@ -46,7 +46,7 @@ import com.palmergames.bukkit.towny.object.TownBlock;
  */
 public class TownyCommandHandler
 {
-    
+
     static ArrayList<String> level0 = new ArrayList<String>(Arrays.asList(
             "town", "resident", "plot"));
     static ArrayList<String> level1 = new ArrayList<String>(Arrays.asList(

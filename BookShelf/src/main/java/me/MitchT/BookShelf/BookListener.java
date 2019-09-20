@@ -32,11 +32,11 @@ import org.bukkit.event.player.PlayerDropItemEvent;
 import org.bukkit.event.player.PlayerInteractEvent;
 import org.bukkit.inventory.Inventory;
 import org.bukkit.inventory.InventoryHolder;
-
+/*
 import com.sk89q.worldguard.protection.ApplicableRegionSet;
 import com.sk89q.worldguard.protection.flags.DefaultFlag;
 import com.sk89q.worldguard.protection.managers.RegionManager;
-
+*/
 /**
  * 
  * BookShelf - A Bukkit & Spigot mod allowing the placement of items
@@ -157,12 +157,12 @@ public class BookListener implements Listener
                             if(plugin.getExternalPluginManager()
                                     .usingWorldGuard())
                             {
-                                RegionManager regionManager = plugin
-                                        .getExternalPluginManager()
-                                        .getWorldGuardPlugin()
-                                        .getRegionManager(
-                                                j.getPlayer().getWorld());
-                                if(regionManager != null)
+                                //RegionManager regionManager = plugin
+                                  //      .getExternalPluginManager()
+                                      //  .getWorldGuardPlugin().
+/*                                        .getRegionManager(
+                                                j.getPlayer().getWorld());*/
+                                /*if(regionManager != null)
                                 {
                                     ApplicableRegionSet set = regionManager
                                             .getApplicableRegions(shelfLocation);
@@ -186,7 +186,7 @@ public class BookListener implements Listener
                                             j.setCancelled(true);
                                             return;
                                         }
-                                }
+                                }*/
                             }
                         }
                         else
@@ -211,7 +211,7 @@ public class BookListener implements Listener
                                     return;
                                 }
                             }
-                            if(plugin.getExternalPluginManager()
+                            /*if(plugin.getExternalPluginManager()
                                     .usingWorldGuard())
                             {
                                 RegionManager regionManager = plugin
@@ -244,7 +244,7 @@ public class BookListener implements Listener
                                             return;
                                         }
                                 }
-                            }
+                            }*/
                         }
                         
                         boolean isOwner = shelf.isOwner(player);
@@ -419,8 +419,8 @@ public class BookListener implements Listener
                 }
                 if(plugin.getConfig().getBoolean(prefix + "book_and_quill"))
                 {
-                    if(j.getCurrentItem().getType() == Material.BOOK_AND_QUILL
-                            || j.getCursor().getType() == Material.BOOK_AND_QUILL)
+                    if(j.getCurrentItem().getType() == Material.WRITABLE_BOOK
+                            || j.getCursor().getType() == Material.WRITABLE_BOOK)
                     {
                         j.setCancelled(true);
                         p.sendMessage("§cBook and Quills may only be stored in bookshelves.");
@@ -441,8 +441,8 @@ public class BookListener implements Listener
                 {
                     if(j.getCurrentItem().getType() == Material.MAP
                             || j.getCursor().getType() == Material.MAP
-                            || j.getCurrentItem().getType() == Material.EMPTY_MAP
-                            || j.getCursor().getType() == Material.EMPTY_MAP)
+                            || j.getCurrentItem().getType() == Material.FILLED_MAP
+                            || j.getCursor().getType() == Material.FILLED_MAP)
                     {
                         j.setCancelled(true);
                         p.sendMessage("§cMaps may only be stored in bookshelves.");
@@ -507,12 +507,12 @@ public class BookListener implements Listener
             if(plugin.getConfig().getBoolean(
                     "villager_trading.allow_book_and_quill") == false)
             {
-                if(j.getCurrentItem().getType() == Material.BOOK_AND_QUILL)
+                if(j.getCurrentItem().getType() == Material.WRITABLE_BOOK)
                 {
                     j.setCancelled(true);
                     return;
                 }
-                else if(j.getCursor().getType() == Material.BOOK_AND_QUILL)
+                else if(j.getCursor().getType() == Material.WRITABLE_BOOK)
                 {
                     j.setCancelled(true);
                     return;
@@ -670,8 +670,8 @@ public class BookListener implements Listener
         {
             if(j.getCurrentItem().getType() == Material.MAP
                     || j.getCursor().getType() == Material.MAP
-                    || j.getCurrentItem().getType() == Material.EMPTY_MAP
-                    || j.getCursor().getType() == Material.EMPTY_MAP)
+                    || j.getCurrentItem().getType() == Material.FILLED_MAP
+                    || j.getCursor().getType() == Material.FILLED_MAP)
             {
                 j.setCancelled(true);
                 return;
@@ -700,8 +700,8 @@ public class BookListener implements Listener
         if(plugin.getConfig().getBoolean("permissions.allow_book_and_quill") == false
                 || !p.hasPermission("bookshelf.baq"))
         {
-            if(j.getCurrentItem().getType() == Material.BOOK_AND_QUILL
-                    || j.getCursor().getType() == Material.BOOK_AND_QUILL)
+            if(j.getCurrentItem().getType() == Material.WRITABLE_BOOK
+                    || j.getCursor().getType() == Material.WRITABLE_BOOK)
             {
                 j.setCancelled(true);
                 return;

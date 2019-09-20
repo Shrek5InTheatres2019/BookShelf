@@ -14,10 +14,10 @@ import org.bukkit.plugin.RegisteredServiceProvider;
 
 import com.griefcraft.lwc.LWC;
 import com.griefcraft.lwc.LWCPlugin;
-import com.palmergames.bukkit.towny.Towny;
+//import com.palmergames.bukkit.towny.Towny;
 import com.sk89q.worldedit.WorldEdit;
 import com.sk89q.worldedit.bukkit.WorldEditPlugin;
-import com.sk89q.worldguard.bukkit.WorldGuardPlugin;
+//import com.sk89q.worldguard.bukkit.WorldGuardPlugin;
 
 /**
  * 
@@ -56,14 +56,14 @@ public class ExternalPluginManager
     private LWCPlugin lwcPlugin;
     private boolean usingLWC = false;
     
-    private Towny townyPlugin;
+    //private Towny townyPlugin;
     private File townyConfigFile;
     private YamlConfiguration townyConfig;
     private TownyHandler townyHandler;
     private TownyCommandHandler townyCommandHandler;
     private boolean usingTowny = false;
     
-    private WorldGuardPlugin worldGuardPlugin;
+    //private WorldGuardPlugin worldGuardPlugin;
     private boolean usingWorldGuard = false;
     
     private WorldEditPlugin worldEditPlugin;
@@ -81,8 +81,8 @@ public class ExternalPluginManager
     {
         setupEconomy();
         setupLWC();
-        setupTowny();
-        setupWorldGuard();
+        //setupTowny();
+        //setupWorldGuard();
         setupWorldEdit();
     }
     
@@ -166,7 +166,7 @@ public class ExternalPluginManager
                 .getPlugin("Towny");
         if(thePlugin != null)
         {
-            this.townyPlugin = (Towny) thePlugin;
+            //this.townyPlugin = (Towny) thePlugin;
             logger.info("[BookShelf] Towny found and hooked.");
             if(plugin.getConfig().getBoolean("towny_support.enabled"))
             {
@@ -202,13 +202,13 @@ public class ExternalPluginManager
             }
     }
     
-    private boolean setupWorldGuard()
+    /*private boolean setupWorldGuard()
     {
         this.worldGuardPlugin = (WorldGuardPlugin) plugin.getServer()
                 .getPluginManager().getPlugin("WorldGuard");
         if(worldGuardPlugin != null)
         {
-            if(worldGuardPlugin.getDescription().getVersion().startsWith("6."))
+            if(worldGuardPlugin.getDescription().getVersion().startsWith("7."))
             {
                 logger.info("[BookShelf] WorldGuard found and hooked.");
                 this.usingWorldGuard = plugin.getConfig().getBoolean(
@@ -221,7 +221,7 @@ public class ExternalPluginManager
             }
         }
         return worldGuardPlugin != null;
-    }
+    }*/
     
     private boolean setupWorldEdit()
     {
@@ -264,11 +264,11 @@ public class ExternalPluginManager
         return this.usingTowny;
     }
     
-    public Towny getTownyPlugin()
+    /*public Towny getTownyPlugin()
     {
         return this.townyPlugin;
     }
-    
+    */
     public YamlConfiguration getTownyConfig()
     {
         return this.townyConfig;
@@ -299,10 +299,10 @@ public class ExternalPluginManager
         return this.usingWorldGuard;
     }
     
-    public WorldGuardPlugin getWorldGuardPlugin()
+    /*public WorldGuardPlugin getWorldGuardPlugin()
     {
         return this.worldGuardPlugin;
-    }
+    }*/
     
     public boolean usingWorldEdit()
     {

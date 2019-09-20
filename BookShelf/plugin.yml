@@ -1,10 +1,11 @@
 name: BookShelf
 main: me.MitchT.BookShelf.BookShelfPlugin
-version: 3.9
+version: 4.0
 description: Allows players to store books in bookshelves.
 author: MitchTalmadge
 dev-url: http://dev.bukkit.org/server-mods/BookShelf
 softdepend: [Vault,Towny,LWC,WorldEdit,WorldGuard]
+api-version: 1.14
 commands:
    bsunlimited:
       description: Sets target bookshelf to never run out of books.
@@ -63,6 +64,10 @@ commands:
       description: Gets the owners of the target bookshelf.
       usage: /<command>
       permission-message: You don't have permission for that command!
+   bshelp:
+      description: Shows the plugin's help message
+      usage: /<command>
+      permission-message: You don't have permission for that command!
 permissions:
     bookshelf.*:
         description: Gives all permissions of BookShelf.
@@ -87,6 +92,7 @@ permissions:
             bookshelf.enchanted_book: true
             bookshelf.records: true
             bookshelf.paper: true
+            bookshelf.help: true
             
     bookshelf.unlimited:
         description: Allows player to make bookshelves never run out of books.
@@ -147,5 +153,8 @@ permissions:
         default: true
     bookshelf.paper:
         description: Allows player to add paper to shelves.
+        default: true
+    bookshelf.help:
+        desctiption: Allows player to use the /bshelp command
         default: true
     

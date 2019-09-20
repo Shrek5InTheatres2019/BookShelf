@@ -330,7 +330,7 @@ public class BookShelf implements InventoryHolder
                         else if(itemType.get(i).equals(
                                 Material.WRITTEN_BOOK.name())
                                 || itemType.get(i).equals(
-                                        Material.BOOK_AND_QUILL.name()))
+                                        Material.WRITABLE_BOOK.name()))
                         {
                             String[] splitPages = itemPages.get(i).split("¬");
                             if(itemType.get(i).equals(
@@ -344,7 +344,7 @@ public class BookShelf implements InventoryHolder
                                                 itemDamage.get(i)));
                             }
                             else if(itemType.get(i).equals(
-                                    Material.BOOK_AND_QUILL.name()))
+                                    Material.WRITABLE_BOOK.name()))
                             {
                                 inventory.setItem(itemInvLocation.get(i),
                                         ItemGenerator.generateBookAndQuill(
@@ -393,7 +393,7 @@ public class BookShelf implements InventoryHolder
             if(shelfContents[i] != null)
             {
                 String type = shelfContents[i].getType().name();
-                if(shelfContents[i].getType() == Material.BOOK_AND_QUILL
+                if(shelfContents[i].getType() == Material.WRITABLE_BOOK
                         || shelfContents[i].getType() == Material.WRITTEN_BOOK)
                 {
                     String title = "";
@@ -627,7 +627,7 @@ public class BookShelf implements InventoryHolder
                 }
                 else if(itemType.get(i).equals(Material.WRITTEN_BOOK.name())
                         || itemType.get(i).equals(
-                                Material.BOOK_AND_QUILL.name()))
+                                Material.WRITABLE_BOOK.name()))
                 {
                     String[] itemPagesSplit = itemPages.get(i).split("¬");
                     
@@ -639,7 +639,7 @@ public class BookShelf implements InventoryHolder
                                 itemDamage.get(i)), shelfLocation);
                     }
                     else if(itemType.get(i).equals(
-                            Material.BOOK_AND_QUILL.name()))
+                            Material.WRITABLE_BOOK.name()))
                     {
                         dropItem(ItemGenerator.generateBookAndQuill(
                                 itemAuthor.get(i), itemTitle.get(i),

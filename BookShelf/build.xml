@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="BookShelf" default="CreateJar" basedir = ".">
+
+    <basename file="${basedir}" property="project.projectname"/>
+    <property name="project.pluginsLocation" location="./build/"/>
+
+    <target name="clean" description="Cleans project">
+        <delete file="${project.pluginsLocation}\${project.projectname}.jar"/>
+    </target>
+
+    <target name="CreateJar" description="Create a jar for the project" depends="clean">
+        <jar destfile="${project.pluginsLocation}\${project.projectname}.jar">
+            <fileset dir="${basedir}">
+                <include name="**.yml"/>
+            </fileset>
+            <fileset dir="${basedir}\bin">
+                <include name="**"/>
+            </fileset>
+            <fileset dir="${basedir}">
+                <include name="src\**"></include>
+            </fileset>
+        </jar>
+    </target>
+</project>

@@ -3,19 +3,13 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>me.MitchT</groupId>
     <artifactId>BookShelf</artifactId>
-    <version>3.8-SNAPSHOT</version>
+    <version>4.0-SNAPSHOT</version>
     <name>BookShelf</name>
     <description>This plugin allows players to store books, maps, and more into those once useless bookshelves - just like chests!</description>
     <url>http://dev.bukkit.org/bukkit-plugins/bookshelf</url>
 
     <dependencies>
-        <dependency>
-            <groupId>org.bukkit</groupId>
-            <artifactId>bukkit</artifactId>
-            <version>1.8.3</version>
-            <scope>system</scope>
-            <systemPath>${project.basedir}/lib/Bukkit.jar</systemPath>
-        </dependency>
+
 
         <dependency>
             <groupId>com.sk89q</groupId>
@@ -26,8 +20,8 @@
 
         <dependency>
             <groupId>com.sk89q</groupId>
-            <artifactId>worldguard</artifactId>
-            <version>6.0.0-SNAPSHOT</version>
+            <artifactId>worldguard-bukkit</artifactId>
+            <version>7.0.0</version>
             <scope>provided</scope>
 
             <!-- Exclude transitive dependencies, or WG pulls in org.spout:vanilla -->
@@ -53,16 +47,26 @@
             <scope>system</scope>
             <systemPath>${project.basedir}/lib/LWC.jar</systemPath>
         </dependency>
-
-        <!-- TODO: Find repos for these -->
         <dependency>
-            <groupId>com.palmergames.bukkit</groupId>
+            <groupId>com.google.guava</groupId>
+            <artifactId>guava</artifactId>
+            <version>28.0-jre</version>
+        </dependency>
+        <dependency>
+            <groupId>com.palmergames</groupId>
             <artifactId>towny</artifactId>
-            <version>0.84.0.0</version>
+            <version>0.94.0.0</version>
             <scope>system</scope>
             <systemPath>${project.basedir}/lib/Towny.jar</systemPath>
         </dependency>
 
+        <!--Spigot API-->
+        <dependency>
+            <groupId>org.spigotmc</groupId>
+            <artifactId>spigot-api</artifactId>
+            <version>1.14-R0.1-SNAPSHOT</version>
+            <scope>provided</scope>
+        </dependency>
     </dependencies>
 
     <build>
@@ -95,7 +99,7 @@
         <!-- sk89q's Repo (WorldEdit & WorldGuard) -->
         <repository>
             <id>sk89q-repo</id>
-            <url>http://maven.sk89q.com/repo</url>
+            <url>http://maven.enginehub.com/repo/</url>
         </repository>
         
         <!-- Vault Repo -->
@@ -103,7 +107,10 @@
             <id>vault-repo</id>
             <url>http://nexus.theyeticave.net/content/repositories/pub_releases</url>
         </repository>
-        
+        <repository>
+            <id>spigot-repo</id>
+            <url>https://hub.spigotmc.org/nexus/content/repositories/snapshots/</url>
+        </repository>
     </repositories>
 
 </project>

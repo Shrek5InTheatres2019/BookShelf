@@ -59,17 +59,17 @@ public class BookShelfPlugin extends JavaPlugin
     private ShelfScheduler shelfScheduler;
     
     public final static ArrayList<String> records = new ArrayList<String>(
-            Arrays.asList(Material.RECORD_3.name(), Material.RECORD_4.name(),
-                    Material.RECORD_5.name(), Material.RECORD_6.name(),
-                    Material.RECORD_7.name(), Material.RECORD_8.name(),
-                    Material.RECORD_9.name(), Material.RECORD_10.name(),
-                    Material.RECORD_11.name(), Material.RECORD_12.name(),
-                    Material.GOLD_RECORD.name(), Material.GREEN_RECORD.name()));
+            Arrays.asList(Material.LEGACY_RECORD_3.name(), Material.LEGACY_RECORD_4.name(),
+                    Material.LEGACY_RECORD_5.name(), Material.LEGACY_RECORD_6.name(),
+                    Material.LEGACY_RECORD_7.name(), Material.LEGACY_RECORD_8.name(),
+                    Material.LEGACY_RECORD_9.name(), Material.LEGACY_RECORD_10.name(),
+                    Material.LEGACY_RECORD_11.name(), Material.LEGACY_RECORD_12.name(),
+                    Material.LEGACY_GOLD_RECORD.name(), Material.LEGACY_GREEN_RECORD.name()));
     public final static ArrayList<String> allowedItems = new ArrayList<String>(
-            Arrays.asList(Material.BOOK.name(), Material.BOOK_AND_QUILL.name(),
-                    Material.WRITTEN_BOOK.name(),
-                    Material.ENCHANTED_BOOK.name(), Material.PAPER.name(),
-                    Material.MAP.name(), Material.EMPTY_MAP.name()));
+            Arrays.asList(Material.BOOK.name(), Material.WRITABLE_BOOK.name(),
+                    Material.WRITTEN_BOOK.name(), Material.ENCHANTED_BOOK.name(),
+                    Material.PAPER.name(), Material.MAP.name(),
+                    Material.FILLED_MAP.name()));
     
     /* AUTO TOGGLE (For shaythegoon) */
     public boolean autoToggle = false;

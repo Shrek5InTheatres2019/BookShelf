@@ -67,7 +67,7 @@ public class ItemGenerator
     public static ItemStack generateBookAndQuill(String author, String title,
             String lore, String[] pages, int damage)
     {
-        ItemStack baq = new ItemStack(Material.BOOK_AND_QUILL);
+        ItemStack baq = new ItemStack(Material.WRITABLE_BOOK);
         BookMeta newbaq = (BookMeta) baq.getItemMeta();
         
         newbaq.setAuthor(author);

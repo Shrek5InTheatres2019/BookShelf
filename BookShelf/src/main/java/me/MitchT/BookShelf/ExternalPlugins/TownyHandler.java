@@ -45,7 +45,7 @@ import com.palmergames.bukkit.towny.object.TownyUniverse;
  */
 public class TownyHandler
 {
-    
+
     public static final int RESIDENT = 0;
     public static final int ALLY = 1;
     public static final int OUTSIDER = 2;
@@ -279,7 +279,7 @@ public class TownyHandler
     
     /**
      * Returns the relation of the resident to the town.
-     * 
+     *
      * @param r
      *            Resident
      * @param t
@@ -527,5 +527,5 @@ public class TownyHandler
         
         return false;
     }
-    
+
 }

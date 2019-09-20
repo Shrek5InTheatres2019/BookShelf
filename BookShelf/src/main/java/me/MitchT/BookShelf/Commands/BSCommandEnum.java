@@ -39,8 +39,9 @@ public enum BSCommandEnum
     ADDOWNERS("bsaddowners", "addowners", BSC_AddOwners.class),
     REMOVEOWNERS("bsremoveowners", "removeowners", BSC_RemoveOwners.class),
     GETOWNERS("bsgetowners", "getowners", BSC_GetOwners.class),
-    EDIT("bsedit", "edit", BSC_Edit.class);
-    
+    EDIT("bsedit", "edit", BSC_Edit.class),
+    HELP("bshelp","help",BSC_Help .class);
+
     private String commandName;
     private String permissionName;
     private Class<? extends BSCommand> commandClass;
