@@ -5,7 +5,6 @@ description: Allows players to store books in bookshelves.
 author: MitchTalmadge
 dev-url: http://dev.bukkit.org/server-mods/BookShelf
 softdepend: [Vault,Towny,LWC,WorldEdit,WorldGuard]
-api-version: 1.14
 commands:
    bsunlimited:
       description: Sets target bookshelf to never run out of books.
