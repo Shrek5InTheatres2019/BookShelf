@@ -7,7 +7,6 @@ import java.util.Map;
 import java.util.logging.Logger;
 
 import me.MitchT.BookShelf.BookShelfPlugin;
-import me.MitchT.BookShelf.OldIDEnum;
 
 /**
  * 
@@ -73,9 +72,9 @@ public class Version2To3 extends Version
             {
                 for(Map.Entry<Integer, Integer> entry : typeID.entrySet())
                 {
-                    plugin.runQuery("UPDATE items SET enumType='"
-                            + OldIDEnum.getMaterialById(entry.getValue())
-                                    .name() + "' WHERE id=" + entry.getKey());
+                   // plugin.runQuery("UPDATE items SET enumType='"
+                           // + OldIDEnum.getMaterialById(entry.getValue())
+                             //       .name() + "' WHERE id=" + entry.getKey());
                 }
             }
             plugin.getSQLManager().commit();

@@ -23,6 +23,7 @@ import org.bukkit.plugin.PluginDescriptionFile;
 import org.bukkit.plugin.java.JavaPlugin;
 import org.bukkit.util.Vector;
 
+
 /**
  * BookShelf - A Bukkit & Spigot mod allowing the placement of items
  * into BookShelves. <br>
@@ -59,12 +60,12 @@ public class BookShelfPlugin extends JavaPlugin
     private ShelfScheduler shelfScheduler;
     
     public final static ArrayList<String> records = new ArrayList<String>(
-            Arrays.asList(Material.LEGACY_RECORD_3.name(), Material.LEGACY_RECORD_4.name(),
-                    Material.LEGACY_RECORD_5.name(), Material.LEGACY_RECORD_6.name(),
-                    Material.LEGACY_RECORD_7.name(), Material.LEGACY_RECORD_8.name(),
-                    Material.LEGACY_RECORD_9.name(), Material.LEGACY_RECORD_10.name(),
-                    Material.LEGACY_RECORD_11.name(), Material.LEGACY_RECORD_12.name(),
-                    Material.LEGACY_GOLD_RECORD.name(), Material.LEGACY_GREEN_RECORD.name()));
+            Arrays.asList(Material.MUSIC_DISC_CAT.name(), Material.MUSIC_DISC_CHIRP.name(),
+                    Material.MUSIC_DISC_BLOCKS.name(), Material.MUSIC_DISC_FAR.name(),
+                    Material.MUSIC_DISC_STAL.name(), Material.MUSIC_DISC_MALL.name(),
+                    Material.MUSIC_DISC_STRAD.name(), Material.MUSIC_DISC_WAIT.name(),
+                    Material.MUSIC_DISC_11.name(), Material.MUSIC_DISC_WARD.name(),
+                    Material.MUSIC_DISC_13.name(), Material.MUSIC_DISC_MELLOHI.name()));
     public final static ArrayList<String> allowedItems = new ArrayList<String>(
             Arrays.asList(Material.BOOK.name(), Material.WRITABLE_BOOK.name(),
                     Material.WRITTEN_BOOK.name(), Material.ENCHANTED_BOOK.name(),
