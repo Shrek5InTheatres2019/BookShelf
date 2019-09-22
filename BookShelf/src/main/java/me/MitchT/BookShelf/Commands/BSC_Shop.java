@@ -71,6 +71,7 @@ public class BSC_Shop extends BSCommand
                 if(!plugin.getExternalPluginManager().usingVaultEconomy())
                 {
                     sender.sendMessage("§cVault is not installed! Aborting...");
+                    return;
                 }
                 if(plugin.getExternalPluginManager().usingTowny())
                 {
