@@ -9,12 +9,14 @@ import java.util.Random;
 
 import me.MitchT.BookShelf.BookShelfPlugin;
 
+import me.MitchT.BookShelf.util.ItemStackSerializer;
 import org.bukkit.Bukkit;
 import org.bukkit.Location;
 import org.bukkit.Material;
 import org.bukkit.enchantments.Enchantment;
 import org.bukkit.entity.HumanEntity;
 import org.bukkit.entity.Player;
+import org.bukkit.event.inventory.CraftItemEvent;
 import org.bukkit.inventory.Inventory;
 import org.bukkit.inventory.InventoryHolder;
 import org.bukkit.inventory.ItemStack;
@@ -313,19 +315,14 @@ public class BookShelf implements InventoryHolder
                                             + shelfLocation.getZ()
                                             + " AND loc="
                                             + itemInvLocation.get(i) + ";");
-                            String enchantType = "";
-                            Enchantment enchantment;
-                            int enchantLevel = 0;
+                            String itemString = "";
                             while(r.next())
                             {
-                                enchantType = r.getString("type");
-                                enchantLevel = r.getInt("level");
+                                itemString = r.getString("itemString");
                             }
                             plugin.close(r);
-                            enchantment = Enchantment.getByName(enchantType);
                             inventory.setItem(itemInvLocation.get(i),
-                                    ItemGenerator.generateEnchantedBook(
-                                            enchantment, enchantLevel));
+                                    ItemGenerator.generateEnchantedBook(itemString));
                         }
                         else if(itemType.get(i).equals(
                                 Material.WRITTEN_BOOK.name())
@@ -466,6 +463,7 @@ public class BookShelf implements InventoryHolder
                             + i
                             + ","
                             + shelfContents[i].getAmount() + ");");
+                    String itemString = ItemStackSerializer.convertItemStackToString(shelfContents[i]);
                     EnchantmentStorageMeta book = (EnchantmentStorageMeta) shelfContents[i]
                             .getItemMeta();
                     Map<Enchantment, Integer> enchants = book
@@ -477,7 +475,7 @@ public class BookShelf implements InventoryHolder
                     }
                     Integer lvl = book.getStoredEnchantLevel(enchant);
                     String type2 = enchant.getName();
-                    plugin.runQuery("INSERT INTO enchant (x,y,z,loc,type,level) VALUES ("
+                    plugin.runQuery("INSERT INTO enchant (x,y,z,loc,itemString) VALUES ("
                             + shelfLocation.getX()
                             + ","
                             + shelfLocation.getY()
@@ -486,7 +484,7 @@ public class BookShelf implements InventoryHolder
                             + ","
                             + i
                             + ",'"
-                            + type2 + "','" + lvl + "');");
+                            + itemString + "');");
                 }
                 else if(shelfContents[i].getType() == Material.MAP)
                 {
@@ -595,18 +593,13 @@ public class BookShelf implements InventoryHolder
                             + shelfLocation.getZ() + " AND loc="
                             + itemInventoryLocation.get(i) + ";");
                     
-                    String enchantType = "";
-                    Enchantment enchantment;
-                    int enchantLevel = 0;
+                    String itemString = "";
                     while(r.next())
                     {
-                        enchantType = r.getString("type");
-                        enchantLevel = r.getInt("level");
+                        itemString = r.getString("itemString");
                     }
                     plugin.close(r);
-                    enchantment = Enchantment.getByName(enchantType);
-                    dropItem(ItemGenerator.generateEnchantedBook(enchantment,
-                            enchantLevel), shelfLocation);
+                    dropItem(ItemGenerator.generateEnchantedBook(itemString), shelfLocation);
                 }
                 else if(itemType.get(i).equals(Material.MAP.name()))
                 {

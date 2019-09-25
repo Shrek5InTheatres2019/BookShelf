@@ -4,16 +4,23 @@
 #| DevBukkit: http://dev.bukkit.org/server-mods/bookshelf/  |
 #+----------------------------------------------------------+
 
+#Amount of rows for the bookshelf inventory
 rows: 2
-
+#Default name for bookshelves
 default_shelf_name: "BookShelf"
+#Default name for bookshops
 default_shop_name: "BookShop - %$ each"
+#Set if bookshelves can be opened by default
 default_openable: true
+#Set if bookshelves can be accessed from the top and bottom face
 top-bottom_access: false
+#Set if shelves can be burnt by fire
 shelves_can_burn: true
 
+#Set if you want to use the built in bookshelf ownership system
 use_built_in_ownership: true
 
+#Set which items can only be placed in bookshelves
 shelf_only_items:
     book: false
     book_and_quill: false
@@ -23,11 +30,16 @@ shelf_only_items:
     records: false
     paper: false
 
+#economy config
 economy:
+    #default price for books in bookshops
     default_price: 10
 
+#database config
 database:
+    #Set if you want to use mySQL instead of SQLite
     mysql_enabled: false
+    #other SQL config
     hostname: localhost
     port: 3306
     database: minecraft
@@ -35,6 +47,7 @@ database:
     password: password
     prefix: BookShelf
 
+#permission configuration
 permissions:
     allow_book: true
     allow_book_and_quill: true
@@ -43,18 +56,22 @@ permissions:
     allow_enchanted_book: true
     allow_records: true
     allow_paper: true
-    
+
+#Set which items villagers are allowed to trade
 villager_trading:
     allow_book: true
     allow_book_and_quill: true
     allow_signed: true
     allow_paper: true
- 
+
+#towny config
 towny_support:
     enabled: false     
-    
+
+#lwc config
 lwc_support:
     enabled: false
-    
+
+#worldguard config
 worldguard_support:
     enabled: false

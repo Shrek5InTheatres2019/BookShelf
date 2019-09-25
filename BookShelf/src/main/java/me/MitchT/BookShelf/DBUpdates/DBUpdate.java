@@ -68,6 +68,10 @@ public class DBUpdate
                 version = new Version2To3(logger, r, plugin);
                 version.doUpdate();
                 break;
+            case 3:
+                version = new Version3To4(logger, r, plugin);
+                version.doUpdate();
+                break;
         }
     }
     

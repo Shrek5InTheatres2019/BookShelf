@@ -2,6 +2,7 @@ package me.MitchT.BookShelf.Shelves;
 
 import java.util.Arrays;
 
+import me.MitchT.BookShelf.util.ItemStackSerializer;
 import org.bukkit.Material;
 import org.bukkit.enchantments.Enchantment;
 import org.bukkit.inventory.ItemStack;
@@ -94,16 +95,22 @@ public class ItemGenerator
         baq.setDurability((short) damage);
         return baq;
     }
-    
+
     public static ItemStack generateEnchantedBook(Enchantment enchantment,
-            int level)
+                                                  int level)
     {
         ItemStack enchanted_book = new ItemStack(Material.ENCHANTED_BOOK);
         EnchantmentStorageMeta new_enchanted_book = (EnchantmentStorageMeta) enchanted_book
                 .getItemMeta();
-        
+
         new_enchanted_book.addStoredEnchant(enchantment, level, false);
         enchanted_book.setItemMeta(new_enchanted_book);
+        return enchanted_book;
+    }
+
+    public static ItemStack generateEnchantedBook(String itemString)
+    {
+        ItemStack enchanted_book = ItemStackSerializer.convertStringToItemStack(itemString);
         return enchanted_book;
     }
     

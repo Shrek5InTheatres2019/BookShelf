@@ -3,7 +3,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>me.MitchT</groupId>
     <artifactId>BookShelf</artifactId>
-    <version>4.0.3</version>
+    <version>4.0.4</version>
     <name>BookShelf</name>
     <description>This plugin allows players to store books, maps, and more into those once useless bookshelves - just like chests!</description>
     <url>http://dev.bukkit.org/bukkit-plugins/bookshelf</url>
@@ -59,6 +59,11 @@
             <scope>system</scope>
             <systemPath>${project.basedir}/lib/Towny.jar</systemPath>
         </dependency>
+        <dependency>
+            <groupId>net.ess3</groupId>
+            <artifactId>EssentialsX</artifactId>
+            <version>2.16.1</version>
+        </dependency>
 
         <!--Spigot API-->
         <dependency>
@@ -110,6 +115,10 @@
         <repository>
             <id>spigot-repo</id>
             <url>https://hub.spigotmc.org/nexus/content/repositories/snapshots/</url>
+        </repository>
+        <repository>
+            <id>ess-repo</id>
+            <url>https://ci.ender.zone/plugin/repository/everything/</url>
         </repository>
     </repositories>
 

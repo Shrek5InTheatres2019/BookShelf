@@ -7,6 +7,8 @@ import java.util.logging.Logger;
 
 import me.MitchT.BookShelf.BookShelfPlugin;
 
+import org.bukkit.Bukkit;
+import org.bukkit.Location;
 import org.bukkit.util.Vector;
 
 /**
@@ -171,7 +173,7 @@ public class Version0To1 extends Version
             {
                 for(int i = 0; i < loctokeep.size(); i++)
                 {
-                    plugin.runQuery("INSERT INTO enchant (x,y,z,loc,type,level) VALUES("
+                    plugin.runQuery("INSERT INTO enchant (x,y,z,loc,itemString) VALUES("
                             + locationtokeep.get(i).getBlockX()
                             + ","
                             + locationtokeep.get(i).getBlockY()

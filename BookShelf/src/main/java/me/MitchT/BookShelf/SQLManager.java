@@ -111,7 +111,7 @@ public class SQLManager
             runQuery("CREATE TABLE IF NOT EXISTS items (id INT NOT NULL AUTO_INCREMENT, x INT, y INT, z INT, title VARCHAR(128), author VARCHAR(128), lore TEXT, damage INT, enumType TEXT, loc INT, amt INT, pages TEXT, PRIMARY KEY (id));");
             runQuery("CREATE TABLE IF NOT EXISTS copy (x INT, y INT, z INT, bool INT);");
             runQuery("CREATE TABLE IF NOT EXISTS enable (x INT, y INT, z INT, bool INT);");
-            runQuery("CREATE TABLE IF NOT EXISTS enchant (x INT, y INT, z INT, loc INT, type VARCHAR(64), level INT);");
+            runQuery("CREATE TABLE IF NOT EXISTS enchant (x INT, y INT, z INT, loc INT, itemString VARCHAR(1024));");
             runQuery("CREATE TABLE IF NOT EXISTS maps (x INT, y INT, z INT, loc INT, durability SMALLINT);");
             runQuery("CREATE TABLE IF NOT EXISTS shop (x INT, y INT, z INT, bool INT, price INT);");
             runQuery("CREATE TABLE IF NOT EXISTS display (x INT, y INT, z INT, bool INT);");
@@ -124,7 +124,7 @@ public class SQLManager
             runQuery("CREATE TABLE IF NOT EXISTS items (id INTEGER PRIMARY KEY, x INT, y INT, z INT, title TEXT, author TEXT, lore TEXT, damage INT, enumType TEXT, loc INT, amt INT, pages TEXT);");
             runQuery("CREATE TABLE IF NOT EXISTS copy (x INT, y INT, z INT, bool INT);");
             runQuery("CREATE TABLE IF NOT EXISTS enable (x INT, y INT, z INT, bool INT);");
-            runQuery("CREATE TABLE IF NOT EXISTS enchant (x INT, y INT, z INT, loc INT, type STRING, level INT);");
+            runQuery("CREATE TABLE IF NOT EXISTS enchant (x INT, y INT, z INT, loc INT, itemString STRING);");
             runQuery("CREATE TABLE IF NOT EXISTS maps (x INT, y INT, z INT, loc INT, durability SMALLINT);");
             runQuery("CREATE TABLE IF NOT EXISTS shop (x INT, y INT, z INT, bool INT, price INT);");
             runQuery("CREATE TABLE IF NOT EXISTS display (x INT, y INT, z INT, bool INT);");
@@ -270,6 +270,10 @@ public class SQLManager
                     updateDb();
                     break;
                 case 2:
+                    updater.doUpdate(version);
+                    updateDb();
+                    break;
+                case 3:
                     updater.doUpdate(version);
                     updateDb();
                     break;
